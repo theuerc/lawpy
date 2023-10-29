@@ -169,6 +169,9 @@ class courtlistener(object):
 
     def fetch_cases_by_id(self, id):
         return self.search({"type": "o", "q": "id:{}".format(id)})
+    
+    def fetch_cases_by_court(self, court):
+        return self.search({"court": court})
 
     def fetch_cases_cited_by(self, c, depth=1): # can take an Opinion, Case, or Caselist object.
         cases = Caselist([])
